@@ -1,0 +1,9 @@
+.about {
+  background-color: aquamarine;
+}
+
+.member-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

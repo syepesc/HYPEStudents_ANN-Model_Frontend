@@ -1,0 +1,10 @@
+.predict {
+  background-color: aquamarine;
+  color: black;
+}
+
+.form-fields-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
