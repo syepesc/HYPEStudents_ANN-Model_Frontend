@@ -142,6 +142,13 @@ const Predict = () => {
             [inputName]: "This field cant be empty",
           };
         });
+      } else if (inputValue <= 0 || inputValue > 100) {
+        setFormErrors((prev) => {
+          return {
+            ...prev,
+            [inputName]: "This field must be between (0, 100)",
+          };
+        });
       } else {
         // empty errors if user is filling again
         setFormErrors((prev) => {
@@ -616,34 +623,22 @@ const Predict = () => {
 
         {/* hsAverageMarks */}
         <Box sx={{ minWidth: 300, margin: 2 }}>
-          <FormControl
+          <TextField
             fullWidth
+            id="hsAverageMarks"
+            label="HS Average Marks"
+            type="number"
             error={formErrors.hsAverageMarks !== null && true}
-          >
-            <InputLabel id="hsAverageMarks">HS Average Marks</InputLabel>
-            <Select
-              labelId="hsAverageMarks"
-              id="hsAverageMarks"
-              value={form.hsAverageMarks}
-              label="HS Average Marks"
-              onChange={(event) =>
-                changeHandler({
-                  inputName: "hsAverageMarks",
-                  value: event.target.value,
-                })
-              }
-            >
-              <MenuItem value={"A+"}>A+</MenuItem>
-              <MenuItem value={"A"}>A</MenuItem>
-              <MenuItem value={"B+"}>B+</MenuItem>
-              <MenuItem value={"B"}>B</MenuItem>
-              <MenuItem value={"C+"}>C+</MenuItem>
-              <MenuItem value={"C"}>C</MenuItem>
-              <MenuItem value={"D+"}>D+</MenuItem>
-              <MenuItem value={"D"}>D</MenuItem>
-              <MenuItem value={"F"}>F</MenuItem>
-            </Select>
-          </FormControl>
+            onChange={(event) =>
+              changeHandler({
+                inputName: "hsAverageMarks",
+                value: parseFloat(event.target.value),
+              })
+            }
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
           {formErrors.hsAverageMarks !== null && (
             <FormHelperText style={{ color: "tomato" }}>
               {formErrors.hsAverageMarks}

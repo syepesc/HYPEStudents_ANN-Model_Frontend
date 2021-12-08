@@ -4,7 +4,7 @@ import UserCard from "../../components/Common/Cards/UserCard";
 import Container from "../../components/Common/Container";
 
 import ImgSantiago from "../../assets/images/user.png";
-import ImgJirarui from "../../assets/images/user.png";
+import ImgJiarui from "../../assets/images/user.png";
 import ImgMaziar from "../../assets/images/user.png";
 import ImgSushma from "../../assets/images/user.png";
 
@@ -20,8 +20,8 @@ const groupMembers = [
   },
   {
     id: "2",
-    profilePicture: ImgJirarui,
-    firstName: "Jirarui",
+    profilePicture: ImgJiarui,
+    firstName: "Jiarui",
     lastName: "Tan",
     title: "Artificial Intelligence Engineer",
     about:

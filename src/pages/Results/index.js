@@ -3,6 +3,9 @@ import "./Results.css";
 import Container from "../../components/Common/Container";
 import axiosInstance from "../../helpers/axiosInterceptor";
 import { useLocation } from "react-router-dom";
+import img1 from "../../assets/graphs/academic performance vs failure.png";
+import img2 from "../../assets/graphs/first year survival vs failure.png";
+import img3 from "../../assets/graphs/high school marks vs failure.png";
 
 const Results = () => {
   const { state } = useLocation();
@@ -30,9 +33,16 @@ const Results = () => {
       ) : (
         <div>
           <h1>RESULTS PAGE</h1>
-          <p style={{ width: 500, overflow: "scroll" }}>
-            {JSON.stringify(data)}
-          </p>
+          <p>{JSON.stringify(data, null, "\t")}</p>
+          <div className="image-container">
+            <img src={img1} alt={"img1"} />
+          </div>
+          <div className="image-container">
+            <img src={img2} alt={"img1"} />
+          </div>
+          <div className="image-container">
+            <img src={img3} alt={"img1"} />
+          </div>
         </div>
       )}
     </Container>
