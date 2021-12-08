@@ -2,12 +2,12 @@
   background-color: aquamarine;
 }
 
-.image-container {
+.image-container2 {
   align-self: center;
   margin: 15px;
 }
 
-.image-container img {
+.image-container2 img {
   width: auto;
   height: auto;
   border-radius: 10px;

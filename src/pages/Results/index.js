@@ -34,13 +34,13 @@ const Results = () => {
         <div>
           <h1>RESULTS PAGE</h1>
           <p>{JSON.stringify(data, null, "\t")}</p>
-          <div className="image-container">
+          <div className="image-container2">
             <img src={img1} alt={"img1"} />
           </div>
-          <div className="image-container">
+          <div className="image-container2">
             <img src={img2} alt={"img1"} />
           </div>
-          <div className="image-container">
+          <div className="image-container2">
             <img src={img3} alt={"img1"} />
           </div>
         </div>
