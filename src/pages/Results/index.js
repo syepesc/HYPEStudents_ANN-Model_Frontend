@@ -3,9 +3,6 @@ import "./Results.css";
 import Container from "../../components/Common/Container";
 import axiosInstance from "../../helpers/axiosInterceptor";
 import { useLocation } from "react-router-dom";
-import img1 from "../../assets/graphs/academic performance vs failure.png";
-import img2 from "../../assets/graphs/first year survival vs failure.png";
-import img3 from "../../assets/graphs/high school marks vs failure.png";
 
 const Results = () => {
   const { state } = useLocation();
@@ -32,17 +29,25 @@ const Results = () => {
         <h1>Loading prediction...</h1>
       ) : (
         <div>
-          <h1>RESULTS PAGE</h1>
-          <p>{JSON.stringify(data, null, "\t")}</p>
-          <div className="image-container2">
-            <img src={img1} alt={"img1"} />
-          </div>
-          <div className="image-container2">
-            <img src={img2} alt={"img1"} />
-          </div>
-          <div className="image-container2">
-            <img src={img3} alt={"img1"} />
-          </div>
+          <h1>RESULTS...</h1>
+
+          <h2>
+            {parseFloat(data.prediction) < 0.5
+              ? `There is ${data.prediction}% to fail. Well done! Keep the hard work!`
+              : `There is ${data.prediction}% to fail. Dont give up, keep the hard work!`}
+          </h2>
+
+          {data.graphs &&
+            data.graphs.map((graphName) => {
+              return (
+                <div key={graphName} className="image-container2">
+                  <img
+                    src={require(`../../assets/graphs/${graphName}`).default}
+                    alt={graphName}
+                  />
+                </div>
+              );
+            })}
         </div>
       )}
     </Container>
