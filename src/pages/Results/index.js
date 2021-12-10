@@ -33,8 +33,12 @@ const Results = () => {
 
           <h2>
             {parseFloat(data.prediction) < 0.5
-              ? `There is ${data.prediction}% to fail. Well done! Keep the hard work!`
-              : `There is ${data.prediction}% to fail. Dont give up, keep the hard work!`}
+              ? `There is ${(parseFloat(data.prediction) * 100).toFixed(
+                  2
+                )}% to fail. Well done! Keep the hard work!`
+              : `There is ${(parseFloat(data.prediction) * 100).toFixed(
+                  2
+                )}% to fail. Dont give up, keep the hard work!`}
           </h2>
 
           {data.graphs &&
